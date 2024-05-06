@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="maindiv">
+        <div class="cal">
+            <div class="display"></div>
+            <div class="btns">
+                <div class="row1">
+                    <div class="item1"><button class="btn btn1"><h3>1</h3></button></div>
+                    <div class="item2"><button class="btn btn2"><h3>2</h3></button></div>
+                    <div class="item3"><button class="btn btn3"><h3>3</h3></button></div>
+                    <div class="item4"><button class="btn btnmul"><h3>*</h3></button></div>
+                </div>
+                <div class="row2">
+                    <div class="item5"><button class="btn btn4"><h3>4</h3></button></div>
+                    <div class="item6"><button class="btn btn5"><h3>5</h3></button></div>
+                    <div class="item7"><button class="btn btn6"><h3>6</h3></button></div>
+                    <div class="item8"><button class="btn btnadd"><h3>+</h3></button></div>
+                </div>
+                <div class="row3">
+                    <div class="item9"><button class="btn btn7"><h3>7</h3></button></div>
+                    <div class="item10"><button class="btn btn8"><h3>8</h3></button></div>
+                    <div class="item11"><button class="btn btn9"><h3>9</h3></button></div>
+                    <div class="item12"><button class="btn btnsub"><h3>-</h3></button></div>
+                </div>
+                <div class="row4">
+                    <div class="item13"><button class="btn btnmod"><h3>%</h3></button></div>
+                    <div class="item14"><button class="btn btn0"><h3>0</h3></button></div>
+                    <div class="item15"><button class="btn btndot"><h3>.</h3></button></div>
+                    <div class="item16"><button class="btn btneql"><h3>=</h3></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .maindiv{
+            border:3px solid black;
+            height:600px;
+            width:300px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cal{
+            height:595px;
+            width:290px;
+            display: flex;
+            /* border:3px solid green; */
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* background-color: grey; */
+        }
+        .display{
+            height:30%;
+            width:90%;
+            /* border: 2px solid red; */
+            /* margin: 25px; */
+            margin-bottom:5px;
+            margin-top:2px;
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            background-color: rgb(221, 214, 214);
+        }
+        .btns{
+            height:80%;
+            width:100%;
+            /* border: 2px solid blue; */
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        .row1, .row2, .row3, .row4{
+            width:90%;
+            height:25%;
+            /* border:1px solid blue; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:5px;
+        }
+        .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9, .item10, .item11, .item12, .item13, .item14, .item15, .item16{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:25%;
+            height:90%;
+            border:1px solid rgb(241, 9, 241);
+            border-radius: 5px;
+        }
+        .btn1,.btn2,.btn3,.btn4,.btn5,.btn6,.btn7,.btn8,.btn9,.btn0,.btnadd,.btnsub,.btnmul,.btnmod,.btndot,.btneql{
+            height:100%;
+            width:100%;
+            background-color: grey;
+        }
+    </style>
+    <script>
+            document.querySelectorAll(".btn").forEach((x)=>{
+                x.addEventListener("click",(e)=>{
+                console.log(x.innerText)
+                let val1 = x.innerText;
+                doSomethingWithValue(val1);
+            })
+            })
+            
+            // document.querySelector(".btn2").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn2").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn3").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn3").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn4").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn4").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn5").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn5").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn6").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn6").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn7").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn7").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn8").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn8").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn9").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn9").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btn0").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btn0").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btnadd").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btnadd").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btnsub").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btnsub").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btnmul").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btnmul").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            // document.querySelector(".btnmod").addEventListener("click",()=>{
+            //     let val1 = document.querySelector(".btnmod").innerText;
+            //     doSomethingWithValue(val1);
+            // })
+            let array=[];
+            function doSomethingWithValue(value) 
+            {
+                array.push(value);
+                console.log("array",array);
+                var i = 0;
+                if (array.length === 3)
+                {
+                    if (array[1]==="*")
+                    {
+                        let display = document.querySelector(".display");
+                        ans = parseInt(array[0])*parseInt(array[2]);
+                        display.innerHTML=`<h1 class="ansh1">${ans}</h1>`;
+                        // display.innerHTML="ans";
+                        fans=document.querySelector(".ansh1");
+                        fans.innerText = ans;
+                        // fans.style.color="red";
+                    }
+                    if (array[1]==="+")
+                    {
+                        let display = document.querySelector(".display");
+                        ans = parseInt(array[0])+parseInt(array[2]);
+                        display.innerHTML=`<h1 class="ansh1">${ans}</h1>`;
+                        // display.innerHTML="ans";
+                        fans=document.querySelector(".ansh1");
+                        fans.innerText = ans;
+                    }
+                    if (array[1]==="-")
+                    {
+                        let display = document.querySelector(".display");
+                        ans = parseInt(array[0])-parseInt(array[2]);
+                        display.innerHTML=`<h1 class="ansh1">${ans}</h1>`;
+                        // display.innerHTML="ans";
+                        fans=document.querySelector(".ansh1");
+                        fans.innerText = ans;
+                    }
+                    if (array[1]==="%")
+                    {
+                        let display = document.querySelector(".display");
+                        ans = parseInt(array[0])%parseInt(array[2]);
+                        display.innerHTML=`<h1 class="ansh1">${ans}</h1>`;
+                        // display.innerHTML="ans";
+                        fans=document.querySelector(".ansh1");
+                        fans.innerText = ans; 
+                    }
+                } else{
+                    // to display 
+                    // [5,+,5,+,10] -> queue
+                    // 
+                    let display = document.querySelector(".display");
+                    display.innerHTML=`<h1 class="ansh1">${array[array.length-1]}</h1>`;
+                }
+            }
+    </script>
+</body>
+</html>
